@@ -24,6 +24,7 @@ function maxChar(str) {
       maxChar = char;
     }
   }
+  return maxChar;
 }
 
 module.exports = maxChar;
