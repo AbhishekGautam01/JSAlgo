@@ -37,6 +37,22 @@ class Node {
     }
     return null;
   }
+
+  validate(node, minimum = null, maximum = null) {
+    if (max !== null && node.data > maximum) {
+      return false;
+    }
+    if (min !== null && node.data < minimum) {
+      return false;
+    }
+
+    if (node.left && !this.validate(node.left, minimum, node.data)) {
+      return false;
+    }
+    if (node.right && !this.validate(node.right, node.data, maximum))
+      return false;
+    return true;
+  }
 }
 
 module.exports = Node;
